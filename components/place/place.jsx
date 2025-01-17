@@ -4,24 +4,7 @@ import { useState, useEffect } from "react";
 import styles from "./place.module.css";
 
 export default function Place() {
-  const [isMapVisible, setIsMapVisible] = useState(false);
-
-  useEffect(() => {
-    const checkConsent = () => {
-      if (typeof window !== "undefined" && window.CookieConsent) {
-        const consent = window.CookieConsent.getConsent();
-        const hasGoogleMapsConsent =
-          consent &&
-          consent.given &&
-          consent.services &&
-          consent.services.some((service) => service.includes("Google Maps"));
-
-        setIsMapVisible(hasGoogleMapsConsent);
-      }
-    };
-
-    checkConsent();
-  }, []);
+  const [isMapVisible, setIsMapVisible] = useState(true);
 
   return (
     <section className={styles.place}>
