@@ -14,7 +14,7 @@ export default function Place() {
       if (typeof window !== "undefined" && document.cookie) {
         const cookies = document.cookie.split("; ");
         const consentCookie = cookies.find((cookie) =>
-          cookie.startsWith("consentid")
+          cookie.startsWith("cookieyes-consent")
         );
 
         console.log("Consent Cookie: ", consentCookie);
