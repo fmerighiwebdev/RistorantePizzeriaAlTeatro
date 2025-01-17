@@ -5,30 +5,23 @@ import styles from "./place.module.css";
 
 export default function Place() {
   const [isMapVisible, setIsMapVisible] = useState(false);
-  const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
-    if (window.CookieConsent) {
-      const consent = window.CookieConsent.getConsent();
-      const hasGoogleMapsConsent =
-        consent &&
-        consent.given &&
-        consent.services.includes(
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.066447014368!2d10.540888176028188!3d45.46846537107414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781945b6092db91%3A0x11159a6aae5fae7b!2sRistorante%20Bar%20Pizzeria%20Al%20Teatro!5e0!3m2!1sit!2sit!4v1689939009832!5m2!1sit!2sit"
-        );
-      setHasConsent(hasGoogleMapsConsent);
-    }
+    const checkConsent = () => {
+      if (typeof window !== "undefined" && window.CookieConsent) {
+        const consent = window.CookieConsent.getConsent();
+        const hasGoogleMapsConsent =
+          consent &&
+          consent.given &&
+          consent.services &&
+          consent.services.some((service) => service.includes("Google Maps"));
 
-    loadMap();
+        setIsMapVisible(hasGoogleMapsConsent);
+      }
+    };
+
+    checkConsent();
   }, []);
-
-  function loadMap() {
-    if (hasConsent) {
-      setIsMapVisible(true);
-    } else {
-      setIsMapVisible(false);
-    }
-  }
 
   return (
     <section className={styles.place}>
@@ -36,7 +29,7 @@ export default function Place() {
         <div className="row align-items-start desc-content">
           <div className="col-12 col-lg-6">
             <div className={styles.mapContainer}>
-              {isMapVisible && hasConsent ? (
+              {isMapVisible ? (
                 <iframe
                   title="Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.066447014368!2d10.540888176028188!3d45.46846537107414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781945b6092db91%3A0x11159a6aae5fae7b!2sRistorante%20Bar%20Pizzeria%20Al%20Teatro!5e0!3m2!1sit!2sit!4v1689939009832!5m2!1sit!2sit"
