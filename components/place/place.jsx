@@ -7,41 +7,32 @@ export default function Place() {
   const [isMapVisible, setIsMapVisible] = useState(false);
 
   useEffect(() => {
-    // Function to check user consent from the cookie
-    const checkConsent = () => {
-      console.log("Cookies: ", document.cookie);
-
+    function checkConsent() {
       if (typeof window !== "undefined" && document.cookie) {
         const cookies = document.cookie.split("; ");
         const consentCookie = cookies.find((cookie) =>
           cookie.startsWith("cookieyes-consent")
         );
 
-        console.log("Consent Cookie: ", consentCookie);
-
         if (consentCookie) {
-          const consentData = consentCookie.split("=")[1]; // Extract the consent data value
-          console.log("Consent Data: ", consentData);
-          // Parse the consentData manually
+          const consentData = consentCookie.split("=")[1];
+
           const consentObj = consentData.split(",").reduce((acc, item) => {
             const [key, value] = item.split(":");
             acc[key.trim()] = value.trim();
             return acc;
           }, {});
 
-          console.log("Parsed Consent Object: ", consentObj);
-
-          // Check if the 'functional' consent is 'yes'
           if (consentObj.consent === "yes") {
-            setIsMapVisible(true); // Show the map
+            setIsMapVisible(true);
+            window.location.reload();
           } else {
-            setIsMapVisible(false); // Hide the map
+            setIsMapVisible(false);
           }
         }
       }
-    };
+    }
 
-    // Run checkConsent when the component mounts
     checkConsent();
   }, []);
 
