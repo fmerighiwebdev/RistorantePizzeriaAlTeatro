@@ -9,7 +9,7 @@ export default function Place() {
   useEffect(() => {
     // Function to check user consent from the cookie
     const checkConsent = () => {
-        console.log("Cookies: ", document.cookie);
+      console.log("Cookies: ", document.cookie);
 
       if (typeof window !== "undefined" && document.cookie) {
         const cookies = document.cookie.split("; ");
@@ -21,21 +21,21 @@ export default function Place() {
 
         if (consentCookie) {
           const consentData = consentCookie.split("=")[1]; // Extract the consent data value
-          console.log("COnsent Data: ", consentData);
-          try {
-            const parsedConsent = JSON.parse(decodeURIComponent(consentData));
+          console.log("Consent Data: ", consentData);
+          // Parse the consentData manually
+          const consentObj = consentData.split(",").reduce((acc, item) => {
+            const [key, value] = item.split(":");
+            acc[key.trim()] = value.trim();
+            return acc;
+          }, {});
 
-            console.log("Parsed Consent: ", parsedConsent);
+          console.log("Parsed Consent Object: ", consentObj);
 
-            // Check if the user has consented to the 'functional' cookies (or the relevant category)
-            if (parsedConsent.functional === "yes") {
-              setIsMapVisible(true); // Show the map
-            } else {
-              setIsMapVisible(false); // Hide the map
-            }
-          } catch (error) {
-            console.error("Failed to parse consent cookie:", error);
-            setIsMapVisible(false); // Default to not showing the map if parsing fails
+          // Check if the 'functional' consent is 'yes'
+          if (consentObj.consent === "yes") {
+            setIsMapVisible(true); // Show the map
+          } else {
+            setIsMapVisible(false); // Hide the map
           }
         }
       }
