@@ -25,6 +25,8 @@ export default function Place() {
           try {
             const parsedConsent = JSON.parse(decodeURIComponent(consentData));
 
+            console.log("Parsed Consent: ", parsedConsent);
+
             // Check if the user has consented to the 'functional' cookies (or the relevant category)
             if (parsedConsent.functional === "yes") {
               setIsMapVisible(true); // Show the map
