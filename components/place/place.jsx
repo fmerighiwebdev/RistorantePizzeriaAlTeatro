@@ -9,6 +9,8 @@ export default function Place() {
   useEffect(() => {
     // Function to check user consent from the cookie
     const checkConsent = () => {
+        console.log("Cookies: ", document.cookie);
+
       if (typeof window !== "undefined" && document.cookie) {
         const cookies = document.cookie.split("; ");
         const consentCookie = cookies.find((cookie) =>
