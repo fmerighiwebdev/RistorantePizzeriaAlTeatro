@@ -6,7 +6,7 @@ import styles from "./place.module.css";
 export default function Place() {
   const [isMapVisible, setIsMapVisible] = useState(false);
 
-  /* useEffect(() => {
+  useEffect(() => {
     function checkConsent() {
       if (typeof window !== "undefined" && document.cookie) {
         const cookies = document.cookie.split("; ");
@@ -33,38 +33,6 @@ export default function Place() {
     }
 
     checkConsent();
-  }, []); */
-
-  useEffect(() => {
-    function checkConsent() {
-      if (typeof window !== "undefined" && document.cookie) {
-        const cookies = document.cookie.split("; ");
-        const consentCookie = cookies.find((cookie) =>
-          cookie.startsWith("cookieyes-consent")
-        );
-
-        if (consentCookie) {
-          const consentData = consentCookie.split("=")[1];
-
-          const consentObj = consentData.split(",").reduce((acc, item) => {
-            const [key, value] = item.split(":");
-            acc[key.trim()] = value.trim();
-            return acc;
-          }, {});
-
-          setIsMapVisible(consentObj.consent === "yes");
-        }
-      }
-    }
-
-    const consentListener = () => checkConsent();
-    window.addEventListener("cookiechange", consentListener);
-
-    checkConsent();
-
-    return () => {
-      window.removeEventListener("cookiechange", consentListener);
-    };
   }, []);
 
   return (
