@@ -7,21 +7,35 @@ export default function Place() {
   const [isMapVisible, setIsMapVisible] = useState(false);
 
   useEffect(() => {
-    // Check if CookieYes is available
-    if (typeof window !== "undefined" && window.CookieYes) {
-      // Listen for consent changes
-      window.addEventListener("CookieConsentChange", (event) => {
-        // If consent for necessary cookies (or marketing cookies) is granted
-        if (
-          event.detail.consents &&
-          event.detail.consents.includes("GoogleMaps")
-        ) {
-          setIsMapVisible(true); // Show the map widget
-        } else {
-          setIsMapVisible(false); // Hide the map widget
+    // Function to check user consent from the cookie
+    const checkConsent = () => {
+      if (typeof window !== "undefined" && document.cookie) {
+        const cookies = document.cookie.split("; ");
+        const consentCookie = cookies.find((cookie) =>
+          cookie.startsWith("consentid")
+        );
+
+        if (consentCookie) {
+          const consentData = consentCookie.split("=")[1]; // Extract the consent data value
+          try {
+            const parsedConsent = JSON.parse(decodeURIComponent(consentData));
+
+            // Check if the user has consented to the 'functional' cookies (or the relevant category)
+            if (parsedConsent.functional === "yes") {
+              setIsMapVisible(true); // Show the map
+            } else {
+              setIsMapVisible(false); // Hide the map
+            }
+          } catch (error) {
+            console.error("Failed to parse consent cookie:", error);
+            setIsMapVisible(false); // Default to not showing the map if parsing fails
+          }
         }
-      });
-    }
+      }
+    };
+
+    // Run checkConsent when the component mounts
+    checkConsent();
   }, []);
 
   return (
