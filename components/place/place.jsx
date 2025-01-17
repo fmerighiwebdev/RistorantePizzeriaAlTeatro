@@ -15,8 +15,11 @@ export default function Place() {
           cookie.startsWith("consentid")
         );
 
+        console.log("Consent Cookie: ", consentCookie);
+
         if (consentCookie) {
           const consentData = consentCookie.split("=")[1]; // Extract the consent data value
+          console.log("COnsent Data: ", consentData);
           try {
             const parsedConsent = JSON.parse(decodeURIComponent(consentData));
 
