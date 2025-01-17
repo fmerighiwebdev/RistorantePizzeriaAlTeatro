@@ -4,7 +4,25 @@ import { useState, useEffect } from "react";
 import styles from "./place.module.css";
 
 export default function Place() {
-  const [isMapVisible, setIsMapVisible] = useState(true);
+  const [isMapVisible, setIsMapVisible] = useState(false);
+
+  useEffect(() => {
+    // Check if CookieYes is available
+    if (typeof window !== "undefined" && window.CookieYes) {
+      // Listen for consent changes
+      window.addEventListener("CookieConsentChange", (event) => {
+        // If consent for necessary cookies (or marketing cookies) is granted
+        if (
+          event.detail.consents &&
+          event.detail.consents.includes("GoogleMaps")
+        ) {
+          setIsMapVisible(true); // Show the map widget
+        } else {
+          setIsMapVisible(false); // Hide the map widget
+        }
+      });
+    }
+  }, []);
 
   return (
     <section className={styles.place}>
