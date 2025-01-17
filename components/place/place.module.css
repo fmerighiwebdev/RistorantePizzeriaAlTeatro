@@ -1,0 +1,8 @@
+.place {
+    background-color: black;
+    padding: 3rem 0;
+}
+
+.place iframe {
+    width: 100%;
+}

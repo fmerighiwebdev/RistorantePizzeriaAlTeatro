@@ -1,0 +1,6 @@
+.introSection {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 5rem 0;
+}

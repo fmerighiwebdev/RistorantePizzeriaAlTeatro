@@ -1,0 +1,63 @@
+.introMenu {
+  background-color: white;
+}
+
+.introMenu p {
+    margin: 0;
+}
+
+.secTitle {
+  color: var(--secondary-clr);
+  font-family: var(--ff-heading);
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--accent-clr);
+  font-size: clamp(1.875rem, 3vw, 2.25rem) !important;
+  text-align: start;
+}
+
+.secSubtitle {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.5rem, 1.324rem + 0.723vw, 2rem);
+}
+
+.menuText {
+  font-family: var(--ff-body);
+  font-size: 1rem;
+}
+
+.introMenu img {
+    height: auto;
+}
+
+.menuBtn {
+    text-decoration: none;
+    display: block;
+    font-family: var(--ff-body);
+    margin: 2.5rem auto;
+    padding: .5rem 2rem;
+    color: var(--secondary-clr);
+    width: fit-content;
+    text-align: center;
+    background-color: var(--accent-clr);
+    transition: all .3s;
+    font-size: 1.25rem;
+}
+
+.menuBtn:hover {
+    background-color: var(--accent-clr-dark);
+    color: white;
+}
+
+.menuBtn img {
+    width: 30px;
+}
+
+@media screen and (max-width: 992px) {
+    .introMenu div div div:first-child {
+        order: 1;
+    }
+
+    .introMenu div div div:last-child {
+        order: 0;
+    }
+}

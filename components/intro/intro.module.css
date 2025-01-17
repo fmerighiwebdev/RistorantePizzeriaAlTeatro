@@ -1,0 +1,31 @@
+.intro {
+  background-color: white;
+}
+
+.intro p {
+    margin: 0;
+}
+
+.secTitle {
+  color: var(--secondary-clr);
+  font-family: var(--ff-heading);
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--accent-clr);
+  margin-bottom: 1.25em;
+  font-size: clamp(1.875rem, 3vw, 2.25rem) !important;
+  text-align: start;
+}
+
+.secSubtitle {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.5rem, 1.324rem + 0.723vw, 2rem);
+}
+
+.descText {
+  font-family: var(--ff-body);
+  font-size: 1rem;
+}
+
+.intro img {
+    height: auto;
+}

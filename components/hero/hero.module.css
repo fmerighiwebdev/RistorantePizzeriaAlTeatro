@@ -1,0 +1,22 @@
+.hero {
+    padding: 8rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero img {
+    width: clamp(18.75rem, 14.107rem + 19.048vw, 31.25rem);
+    height: auto;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

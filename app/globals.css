@@ -1,5 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Della+Respira&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 *, *::after, *::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+    --ff-heading: 'Della Respira', serif;
+    --ff-body: 'Raleway', sans-serif;
+
+    --primary-clr: hsl(0, 0%, 0%);
+    --secondary-clr: #575757b4;
+    --footer: hsla(60, 1%, 34%, 0.152);
+    --accent-clr: hsla(0, 0%, 34%, 0.144);
+    --accent-clr-dark: hsla(0, 0%, 34%, 0.418);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-heading);
+}
+
+p, a, li, span {
+    font-family: var(--ff-body);
 }
