@@ -22,9 +22,9 @@ export default function IntroMenu() {
   return (
     <div className={styles.introMenu}>
       <div className="container">
-        <div className="row align-items-center gap-4 gap-md-0 desc-content">
+        <div className="row align-items-center gap-4 gap-lg-0 desc-content">
           <div className="col-12 col-lg-6">
-            <h3 className={styles.secTitle}>Dai un'occhiata al nostro menù:</h3>
+            <h2 className={styles.secTitle}>Il nostro menù:</h2>
             <a className={styles.menuBtn} href="/menu">
               Menu <Image src={forkIcon}></Image>
             </a>

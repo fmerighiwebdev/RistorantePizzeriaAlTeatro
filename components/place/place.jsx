@@ -38,7 +38,7 @@ export default function Place() {
   return (
     <section className={styles.place}>
       <div className="container">
-        <div className="row align-items-start desc-content">
+        <div className="row align-items-start desc-content gap-5 gap-lg-0">
           <div className="col-12 col-lg-6">
             <div className={styles.mapContainer}>
               {isMapVisible ? (
@@ -53,7 +53,7 @@ export default function Place() {
                   loading="lazy"
                 ></iframe>
               ) : (
-                <div className={styles.nocookieText}>
+                <div className={styles.noCookieText}>
                   <p>Errore nel caricamento del widget Google Maps.</p>
                 </div>
               )}
@@ -61,24 +61,23 @@ export default function Place() {
           </div>
           <div className="col-12 col-lg-6">
             <h3 className={styles.secTitle}>I nostri orari</h3>
-            <div className={styles.timetables}>
-              <div className={styles.lunch}>
-                <p>
-                  Aperti <strong>TUTTI I GIORNI</strong>
-                </p>
-                <p className={styles.serviceTitle}>Orario - Pranzo</p>
-                <p>
-                  <strong>11.30 - 15.30</strong>
-                </p>
-              </div>
-              <div className={styles.dinner}>
-                <p>
-                  Aperti <strong>TUTTI I GIORNI</strong>
-                </p>
-                <p className={styles.serviceTitle}>Orario - Cena</p>
-                <p>
-                  <strong>18.00 - 23.30</strong>
-                </p>
+            <div className={styles.timeTables}>
+              <p>
+                Aperti <strong>TUTTI I GIORNI</strong>
+              </p>
+              <div className={styles.openingHours}>
+                <div className={styles.lunch}>
+                  <p className={styles.serviceTitle}>Pranzo</p>
+                  <p>
+                    <strong>11.30 - 15.30</strong>
+                  </p>
+                </div>
+                <div className={styles.dinner}>
+                  <p className={styles.serviceTitle}>Cena</p>
+                  <p>
+                    <strong>18.00 - 23.30</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ export default function Intro() {
   return (
     <div className={styles.intro}>
       <div className="container">
-          <div className="row align-items-center gap-4 gap-md-0 desc-content">
+          <div className="row align-items-center gap-4 gap-lg-0 desc-content">
             <div className="col-12 col-lg-6">
               <div
                 id="carouselExampleAutoplaying"
@@ -92,7 +92,7 @@ export default function Intro() {
               </div>
             </div>
             <div className="col-12 col-lg-6">
-              <h3 className={styles.secTitle}>Benvenuti</h3>
+              <h2 className={styles.secTitle}>Benvenuti</h2>
               <p className={styles.descText}>
                 Il <strong>Ristorante Pizzeria Al Teatro</strong> ti dà il benvenuto
                 con calore all'interno delle sue accoglienti sale, immergendoti in
