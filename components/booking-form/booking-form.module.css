@@ -67,3 +67,15 @@
     text-align: center;
     margin-bottom: 2rem;
 }
+
+.success {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(117, 204, 117);
+}
+
+.success p {
+    margin: 0;
+    color: white;
+    text-align: center;
+}

@@ -28,12 +28,14 @@ export default function BookingForm() {
     privacy: false,
   });
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   async function handleSubmit() {
     setLoading(true);
     try {
       const response = await axios.post("/api/booking", formData);
       console.log(response.data);
+      setSuccess(true);
     } catch (error) {
       console.error(error);
     }
@@ -235,6 +237,11 @@ export default function BookingForm() {
           </button>
         )}
       </div>
+      {success && (
+        <div className={styles.success}>
+          <p>Prenotazione effettuata con successo!</p>
+        </div>
+      )}
       {step === 3 && (
         <div className={styles.reviewReservation}>
           <h2>Riepilogo prenotazione</h2>
