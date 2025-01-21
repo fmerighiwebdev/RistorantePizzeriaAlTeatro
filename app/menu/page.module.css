@@ -1,0 +1,207 @@
+.menuPage p {
+    margin: 0;
+}
+
+.navBtns {
+    width: min(1000px, 90%);
+    margin: 5.5em auto 2em auto;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeIn .5s .4s ease-in-out forwards;
+}
+
+.navBtn {
+    text-decoration: none;
+    font-family: var(--ff-body);
+    padding: .75em 1em;
+    border-radius: 10px;
+    color: var(--secondary-clr);
+    text-align: center;
+    background-color: var(--accent-clr);
+    width: 180px;
+    transition: all .3s;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+.menuTitle {
+    font-family: var(--ff-heading);
+    color: var(--secondary-clr);
+    background-color: var(--accent-clr);
+    font-weight: 400;
+    padding-top: 2em;
+    font-size: clamp(3.5em, 5vw, 5em);
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    animation: fadeInFromTop .5s ease-in-out forwards;
+}
+
+.menuContainer {
+    margin: 5em auto;
+    border: 2px solid var(--secondary-clr);
+}
+
+.menuCard {
+    padding: 1em 0 3em 0;
+    opacity: 0;
+    animation: fadeIn .5s .8s ease-in-out forwards;
+}
+
+.info p {
+    font-family: var(--ff-body);
+    text-align: end;
+    margin: 0;
+    font-size: clamp(.25rem, 2vw, .75rem);
+}
+
+.info {
+    margin-bottom: 2em;
+}
+
+.advice {
+    margin-top: 1em;
+    text-align: center;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: var(--accent-clr);
+}
+
+.advice p {
+    font-family: var(--ff-body);
+    color: var(--secondary-clr);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.cardTitle {
+    font-family: var(--ff-heading);
+    text-align: center;
+    color: var(--secondary-clr);
+    font-size: clamp(2.25rem, 3vw, 2.75rem);
+}
+
+.mt {
+    margin-top: 1em;
+}
+
+.mt-xxl {
+    margin-top: 7em !important;
+}
+
+.cardSubtitle {
+    font-family: var(--ff-heading);
+    text-align: center;
+    color: var(--secondary-clr);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    border-bottom: 2px solid var(--accent-clr);
+    padding-top: .75em;
+    margin: 0 auto;
+}
+
+.cardContentDouble {
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.cardContentSingle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.menuItem {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    gap: 2em;
+}
+
+.itemInfo {
+    width: 90%;
+    padding: .5em 0;
+}
+
+.itemName, .price p {
+    font-family: var(--ff-body);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.itemDesc {
+    font-family: var(--ff-body);
+    color: var(--secondary-clr);
+    font-size: .875rem;
+}
+
+.itemPrice {
+    padding: .5em 0;
+}
+
+@media screen and (max-width: 992px) {
+    .menuCard {
+        padding: 1em 0 2em 0;
+    }
+
+    .menuItem {
+        width: 100%;
+    }
+
+    .cardContentSingle {
+        gap: 2em;
+        justify-content: flex-start;
+    }
+
+    .advice p {
+        font-size: .75rem;
+    }
+
+    .cardContentDouble {
+        flex-direction: column;
+    }
+
+    .itemInfo {
+        width: 100%;
+    }
+
+    .itemName, .price p {
+        font-size: .875rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navBtns {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+    }
+
+    .navBtn {
+        width: 180px;
+    }
+}
+
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

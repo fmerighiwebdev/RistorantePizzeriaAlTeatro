@@ -1,6 +1,6 @@
 .place {
     background-color: black;
-    padding: 3rem 0;
+    padding: 5rem 0;
 }
 
 .place iframe {
@@ -54,9 +54,15 @@
     flex: 1;
 }
 
-.lunch p, .dinner p {
+.serviceTitle {
     color: white;
     font-size: 1.125rem;
     text-transform: uppercase;
+    text-align: center;
+}
+
+.serviceTime {
+    font-size: 2rem;
+    color: white;
     text-align: center;
 }

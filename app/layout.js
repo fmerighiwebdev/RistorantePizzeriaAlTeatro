@@ -3,6 +3,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Script from "next/script";
 import Maintenance from "@/components/maintenance/maintenance";
+import Footer from "@/components/footer/footer";
 
 export const metadata = {
   title: "Ristorante Pizzeria Al Teatro - Desenzano del Garda (BS)",
@@ -11,7 +12,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const isMaintenance = true;
+  const isMaintenance = false;
 
   return (
     <html lang="it">
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
           <>
             <Header />
             <main>{children}</main>
+            <Footer />
           </>
         )}
       </body>

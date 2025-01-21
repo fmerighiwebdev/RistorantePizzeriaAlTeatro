@@ -13,6 +13,8 @@ import piatti5 from "@/assets/piatti5.webp";
 import forkIcon from "@/assets/fork.svg";
 
 import { useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function IntroMenu() {
   useEffect(() => {
@@ -23,11 +25,21 @@ export default function IntroMenu() {
     <div className={styles.introMenu}>
       <div className="container">
         <div className="row align-items-center gap-4 gap-lg-0 desc-content">
-          <div className="col-12 col-lg-6">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, type: "spring" }}
+            className="col-12 col-lg-6"
+          >
             <h2 className={styles.secTitle}>Il nostro menù:</h2>
-            <a className={styles.menuBtn} href="/menu">
-              Menu <Image src={forkIcon}></Image>
-            </a>
+            <Link className={styles.menuBtn} href="/menu">
+              Menu{" "}
+              <Image
+                src={forkIcon}
+                alt="Ristorante Pizzeria Al Teatro - Menu"
+              ></Image>
+            </Link>
             <p className={styles.menuText}>
               Siamo entusiasti di presentarvi un'ampia e ricercata selezione di
               menu, ciascuno con la sua caratteristica preziosa e unica. Dalla
@@ -48,8 +60,14 @@ export default function IntroMenu() {
               un'esperienza culinaria indimenticabile, dove la varietà e la
               qualità si fondono per deliziare il vostro palato in ogni boccone.
             </p>
-          </div>
-          <div className="col-12 col-lg-6">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, type: "spring" }}
+            className="col-12 col-lg-6"
+          >
             <div
               id="carouselMenuAutoplaying"
               className="carousel slide carousel-fade shadow-lg"
@@ -131,7 +149,7 @@ export default function IntroMenu() {
                 <span className="visually-hidden">Next</span>
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

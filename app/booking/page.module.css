@@ -1,0 +1,37 @@
+.bookingPage {
+  z-index: 999;
+  padding: 5rem 0;
+  position: relative;
+  width: 100vw;
+  min-height: 100dvh;
+  background-color: white;
+}
+
+.bookingPage img {
+  width: 150px;
+  height: auto;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
+.backHome {
+  position: absolute;
+  top: clamp(1rem, 0.257rem + 3.048vw, 3rem);
+  left: clamp(1rem, 0.257rem + 3.048vw, 3rem);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: .5rem 1rem;
+  background-color: var(--primary-clr);
+}
+
+.backHome a {
+  text-decoration: none;
+  color: white;
+}
+
+.backHome img {
+  width: 15px;
+  height: auto;
+  margin: 0;
+}

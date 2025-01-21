@@ -30,7 +30,10 @@ export default function Header() {
               <Link href="/menu">Menu</Link>
             </li>
             <li>
-              <Link href="#contatti">Contatti</Link>
+              <Link href="/booking">Prenota</Link>
+            </li>
+            <li>
+              <Link href="#footer">Contatti</Link>
             </li>
           </ul>
         </nav>
@@ -60,7 +63,10 @@ export default function Header() {
                 <Link href="/menu">Menu</Link>
               </li>
               <li>
-                <Link href="#contatti">Contatti</Link>
+                <Link href="/booking">Prenota</Link>
+              </li>
+              <li>
+                <Link href="#footer">Contatti</Link>
               </li>
             </ul>
           </motion.nav>

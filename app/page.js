@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import Intro from "@/components/intro/intro";
 import IntroMenu from "@/components/intro-menu/intro-menu";
 import Place from "@/components/place/place";
+import Booking from "@/components/booking/booking";
 
 export default function Home() {
   return (
@@ -15,8 +16,7 @@ export default function Home() {
         <IntroMenu />
       </section>
       <Place />
-
-      {/*  */}
+      <Booking />
     </>
   );
 }

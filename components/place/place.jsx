@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import styles from "./place.module.css";
 
+import { motion } from "framer-motion";
+
 export default function Place() {
   const [isMapVisible, setIsMapVisible] = useState(false);
 
@@ -39,7 +41,13 @@ export default function Place() {
     <section className={styles.place}>
       <div className="container">
         <div className="row align-items-start desc-content gap-5 gap-lg-0">
-          <div className="col-12 col-lg-6">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, type: "spring" }}
+            className="col-12 col-lg-6"
+          >
             <div className={styles.mapContainer}>
               {isMapVisible ? (
                 <iframe
@@ -58,8 +66,14 @@ export default function Place() {
                 </div>
               )}
             </div>
-          </div>
-          <div className="col-12 col-lg-6">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, type: "spring" }}
+            className="col-12 col-lg-6"
+          >
             <h3 className={styles.secTitle}>I nostri orari</h3>
             <div className={styles.timeTables}>
               <p>
@@ -68,19 +82,15 @@ export default function Place() {
               <div className={styles.openingHours}>
                 <div className={styles.lunch}>
                   <p className={styles.serviceTitle}>Pranzo</p>
-                  <p>
-                    <strong>11.30 - 15.30</strong>
-                  </p>
+                  <p className={styles.serviceTime}>11.30 - 15.30</p>
                 </div>
                 <div className={styles.dinner}>
                   <p className={styles.serviceTitle}>Cena</p>
-                  <p>
-                    <strong>18.00 - 23.30</strong>
-                  </p>
+                  <p className={styles.serviceTime}>18.00 - 23.30</p>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

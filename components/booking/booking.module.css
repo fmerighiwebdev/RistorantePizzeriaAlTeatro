@@ -1,0 +1,25 @@
+.booking {
+    padding: 5rem 0;
+    background-color: rgb(226, 226, 226);
+}
+
+.booking div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: min(100%, 650px);
+}
+
+.booking h3 {
+    text-transform: uppercase;
+    color: var(--primary-clr);
+}
+
+.booking a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-clr);
+    padding: 0.5rem 2rem;
+}

@@ -21,6 +21,28 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--ff-heading);
 }
 
-p, a, li, span {
+p, a, li, span, label, input, input::placeholder, button {
     font-family: var(--ff-body);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--accent-clr);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-clr);
+    border: 3px solid var(--accent-clr);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-clr-dark);
 }
