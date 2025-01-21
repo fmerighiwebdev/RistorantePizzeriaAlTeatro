@@ -9,6 +9,11 @@ export const metadata = {
   title: "Ristorante Pizzeria Al Teatro - Desenzano del Garda (BS)",
   description:
     "Il Ristorante Pizzeria Al Teatro di Desenzano del Garda (BS) ti dà il benvenuto con calore all'interno delle sue accoglienti sale, immergendoti in un'esperienza culinaria unica!",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+    other: [{ rel: "manifest", url: "/manifest.json" }],
+  },
 };
 
 export default function RootLayout({ children }) {
