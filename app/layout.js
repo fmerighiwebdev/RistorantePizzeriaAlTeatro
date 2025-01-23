@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="it">
       <Script
         src={`https://cdn-cookieyes.com/client_data/3ebf5a2df9be8cd9fce2562a/script.js`}
+        strategy="beforeInteractive"
       ></Script>
       <body>
         {isMaintenance ? (
