@@ -58,7 +58,7 @@ export default function BookingForm() {
       newErrors.surname = "Il cognome è obbligatorio";
 
     if (!formData.phone.trim()) newErrors.phone = "Il telefono è obbligatorio";
-    const phoneRegex = /^[0-9]{10}$/;
+    const phoneRegex = /^\+?[0-9]{7,16}$/;
     if (!phoneRegex.test(formData.phone))
       newErrors.phone = "Il telefono non è valido";
 
