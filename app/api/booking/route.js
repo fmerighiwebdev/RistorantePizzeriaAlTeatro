@@ -36,7 +36,7 @@ export async function POST(request) {
     });
   }
 
-  const phoneRegex = /^[0-9]{10,15}$/;
+  const phoneRegex = /^\+?[0-9]{7,16}$/;
   if (!phoneRegex.test(phone.trim())) {
     return NextResponse.json({
       message: "Il telefono non è valido.",
