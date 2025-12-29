@@ -24,6 +24,7 @@ export default function Booking() {
           accoglierti con il sorriso e la qualità che ci contraddistinguono.
         </p>
         <Link href="/booking">Prenota ora!</Link>
+        <p style={{ textAlign: "center", padding: "10px", backgroundColor: "rgba(255, 0, 0, 0.1)", color: "red" }}><span style={{ fontWeight: "bold" }}>Le prenotazioni per il giorno 31 dicembre 2025 sono chiuse.</span> <br /> Qualunque richiesta per questa data non verrà tenuta in considerazione.</p>
       </motion.div>
     </section>
   );
