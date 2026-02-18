@@ -6,6 +6,12 @@ import leftArrow from "@/assets/left-arr.svg";
 import Image from "next/image";
 import BookingForm from "@/components/booking-form/booking-form";
 
+export const metadata = {
+  title: "Prenotazione Tavoli",
+  description:
+    "Prenota un tavolo al Ristorante Pizzeria Al Teatro. Scegli la data, l'orario e il numero di persone per assicurarti un posto nel nostro accogliente ristorante.",
+};
+
 export default function Booking() {
   return (
     <section className={styles.bookingPage}>
