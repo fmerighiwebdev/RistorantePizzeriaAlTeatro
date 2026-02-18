@@ -4,6 +4,17 @@ import styles from "./page.module.css";
 
 import logo from "@/assets/logo.png";
 
+export const metadata = {
+  title: "Privacy e Cookie Policy",
+  description:
+    "Leggi la nostra Privacy e Cookie Policy per scoprire come proteggiamo i tuoi dati personali e gestiamo i cookie sul nostro sito web. La tua privacy è la nostra priorità.",
+  canonical: "https://www.ristorantealteatro.it/privacy-cookies",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
 export default function PrivacyCookiePage() {
   return (
     <section className={styles.privacyPage}>

@@ -7,6 +7,10 @@ import IntroMenu from "@/components/intro-menu/intro-menu";
 import Place from "@/components/place/place";
 import Booking from "@/components/booking/booking";
 
+export const metadata = {
+  canonicals: "https://www.ristorantealteatro.it",
+}
+
 export default function Home() {
   return (
     <>

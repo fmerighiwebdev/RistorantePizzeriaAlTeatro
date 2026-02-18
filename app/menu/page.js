@@ -2,6 +2,17 @@ import styles from "./page.module.css";
 
 import Image from "next/image";
 
+export const metadata = {
+  title: "Menu",
+  description:
+    "Scopri il menu del Ristorante Pizzeria Al Teatro, con una selezione di piatti italiani e indiani preparati con ingredienti freschi e di alta qualità. Dalle specialità di mare alle deliziose opzioni vegetariane, il nostro menu offre qualcosa per tutti i gusti.",
+  canonical: "https://www.ristorantealteatro.it/menu",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function Menu() {
   return (
     <section className={styles.menuPage}>
