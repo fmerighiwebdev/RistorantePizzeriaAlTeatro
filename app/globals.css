@@ -58,3 +58,12 @@ body {
     white-space: nowrap;
     border: 0;
 }
+
+/* BOOKING WIDGET */
+#quandoo-booking-widget iframe {
+    width: 100% !important;
+}
+
+.fsIZzU {
+    background-color: var(--primary-clr) !important;
+}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./booking.module.css";
 
 import { motion } from "framer-motion";
+import Script from "next/script";
 
 export default function Booking() {
   return (
@@ -23,7 +24,14 @@ export default function Booking() {
           l&apos;orario che preferisci: il nostro staff sarà pronto ad
           accoglierti con il sorriso e la qualità che ci contraddistinguono.
         </p>
-        <Link href="/booking">Prenota ora!</Link>
+        <div id="quandoo-booking-widget" />
+        <Script
+          id="quandoo-booking-script"
+          src="https://booking-widget.quandoo.com/index.js"
+          strategy="afterInteractive"
+          data-merchant-id="109865"
+          data-theme="brand"
+        />
       </motion.div>
     </section>
   );
