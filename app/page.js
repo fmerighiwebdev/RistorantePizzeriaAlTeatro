@@ -8,7 +8,7 @@ import Place from "@/components/place/place";
 import Booking from "@/components/booking/booking";
 
 export const metadata = {
-  canonicals: "https://www.ristorantealteatro.it",
+  canonicals: "https://www.ristorante-alteatro.it",
 }
 
 export default function Home() {

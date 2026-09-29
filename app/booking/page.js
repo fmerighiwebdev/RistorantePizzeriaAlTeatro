@@ -10,7 +10,7 @@ export const metadata = {
   title: "Prenotazione Tavoli",
   description:
     "Prenota un tavolo al Ristorante Pizzeria Al Teatro. Scegli la data, l'orario e il numero di persone per assicurarti un posto nel nostro accogliente ristorante.",
-  canonical: "https://www.ristorantealteatro.it/booking",
+  canonical: "https://www.ristorante-alteatro.it/booking",
   robots: {
     index: true,
     follow: true,

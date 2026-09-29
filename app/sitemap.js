@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://ristorantealteatro.it'
+  const baseUrl = 'https://ristorante-alteatro.it'
 
   return [
     {

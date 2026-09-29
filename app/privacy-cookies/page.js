@@ -8,7 +8,7 @@ export const metadata = {
   title: "Privacy e Cookie Policy",
   description:
     "Leggi la nostra Privacy e Cookie Policy per scoprire come proteggiamo i tuoi dati personali e gestiamo i cookie sul nostro sito web. La tua privacy è la nostra priorità.",
-  canonical: "https://www.ristorantealteatro.it/privacy-cookies",
+  canonical: "https://www.ristorante-alteatro.it/privacy-cookies",
   robots: {
     index: false,
     follow: true,
