@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://ristorante-alteatro.it/sitemap.xml',
+    sitemap: 'https://www.ristorante-alteatro.it/sitemap.xml',
   }
 }
