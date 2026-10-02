@@ -4,11 +4,14 @@ import styles from "./page.module.css";
 
 import logo from "@/assets/logo.png";
 
+/** @type {import("next").Metadata} */
 export const metadata = {
   title: "Privacy e Cookie Policy",
   description:
     "Leggi la nostra Privacy e Cookie Policy per scoprire come proteggiamo i tuoi dati personali e gestiamo i cookie sul nostro sito web. La tua privacy è la nostra priorità.",
-  canonical: "https://www.ristorante-alteatro.it/privacy-cookies",
+  alternates: {
+    canonical: "/privacy-cookies",
+  },
   robots: {
     index: false,
     follow: true,
@@ -21,7 +24,7 @@ export default function PrivacyCookiePage() {
       <div className="container">
         <div className={styles.privacyContainer}>
           <div className={styles.privacyHeading}>
-            <Image src={logo} alt="CMG BALDESSARELLI Logo" />
+            <Image src={logo} alt="Ristorante Pizzeria Al Teatro Logo" />
             <h1>Privacy e Cookie Policy</h1>
           </div>
           <div className={styles.privacyContent}>
@@ -45,7 +48,7 @@ export default function PrivacyCookiePage() {
                 (di seguito, il &quot;Titolare&quot;). Per qualsiasi domanda o
                 richiesta relativa alla privacy, è possibile contattare il
                 Titolare tramite email all&apos;indirizzo:{" "}
-                <a href="mailto:info@cmgbaldessarelli.it">
+                <a href="mailto:alteatrodesenzano@gmail.com">
                   alteatrodesenzano@gmail.com
                 </a>
                 .

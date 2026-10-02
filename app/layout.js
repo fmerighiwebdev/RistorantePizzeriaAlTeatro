@@ -5,7 +5,9 @@ import Script from "next/script";
 import Maintenance from "@/components/maintenance/maintenance";
 import Footer from "@/components/footer/footer";
 
+/** @type {import("next").Metadata} */
 export const metadata = {
+  metadataBase: new URL("https://www.ristorante-alteatro.it"),
   title: {
     default: "Ristorante Pizzeria Al Teatro - Desenzano del Garda (BS)",
     template: "%s | Ristorante Pizzeria Al Teatro",
@@ -45,8 +47,11 @@ export default function RootLayout({ children }) {
           <Maintenance />
         ) : (
           <>
+            <a className="skip-link" href="#main-content">
+              Vai al contenuto principale
+            </a>
             <Header />
-            <main>{children}</main>
+            <main id="main-content" tabIndex={-1}>{children}</main>
             <Footer />
           </>
         )}

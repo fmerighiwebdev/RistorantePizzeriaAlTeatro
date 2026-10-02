@@ -12,7 +12,7 @@
     width: min(100%, 650px);
 }
 
-.booking h3 {
+.booking h2 {
     text-transform: uppercase;
     color: var(--primary-clr);
 }
@@ -22,4 +22,10 @@
     color: white;
     background-color: var(--primary-clr);
     padding: 0.5rem 2rem;
+    text-align: center;
+}
+
+.booking a:focus-visible {
+    outline: 3px solid black;
+    outline-offset: 4px;
 }

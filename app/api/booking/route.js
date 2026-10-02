@@ -1,7 +1,21 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { CUSTOM_BOOKING_ENABLED } from "@/lib/booking-config";
 
 export async function POST(request) {
+  if (!CUSTOM_BOOKING_ENABLED) {
+    return NextResponse.json(
+      { message: "Il servizio di prenotazione non è disponibile." },
+      {
+        status: 404,
+        headers: {
+          "Cache-Control": "no-store",
+          "X-Robots-Tag": "noindex",
+        },
+      }
+    );
+  }
+
   const { name, surname, email, phone, people, date, time, notes, privacy } =
     await request.json();
 

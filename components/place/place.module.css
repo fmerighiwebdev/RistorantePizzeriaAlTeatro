@@ -4,6 +4,7 @@
 }
 
 .place iframe {
+    display: block;
     width: 100%;
 }
 
@@ -11,14 +12,42 @@
     margin: 0;
 }
 
+.address {
+    color: white;
+    font-family: var(--ff-body);
+    font-style: normal;
+    margin: 1rem 0 0.5rem;
+}
+
+.directionsLink {
+    display: inline-block;
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.directionsLink:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+.mapContainer {
+    min-height: 450px;
+}
+
 .noCookieText {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 450px;
+    padding: 1.5rem;
+    border: 1px solid white;
 }
 
 .noCookieText p {
-    color: rgb(168, 0, 0);
+    color: white;
     font-size: 1.125rem;
 }
 

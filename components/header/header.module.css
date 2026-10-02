@@ -40,24 +40,42 @@
     color: var(--secondary-clr);
 }
 
+.headerNav a[aria-current="page"], .headerNavMobile a[aria-current="page"] {
+    color: var(--primary-clr);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+}
+
+.header a:focus-visible, .hamburger:focus-visible {
+    outline: 3px solid var(--primary-clr);
+    outline-offset: 4px;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
     margin: 0 1rem 0 0;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    width: 44px;
+    height: 44px;
 }
 
 .bar {
     display: block;
     width: 25px;
     height: 3px;
-    margin: 5px 0;
+    margin: 5px auto;
     transition: all .3s ease;
     background-color: black;
 }
 
 .headerNavMobile {
-    position: fixed;
-    top: 77.45px;
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: white;
@@ -80,5 +98,29 @@
 
     .headerNav {
         display: none;
+    }
+
+    .headerNavMobile:not([hidden]) {
+        display: block;
+        max-height: calc(100dvh - 100%);
+        overflow-y: auto;
+        animation: revealMenu 0.3s ease;
+    }
+}
+
+@keyframes revealMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .headerNavMobile:not([hidden]) {
+        animation: none;
     }
 }

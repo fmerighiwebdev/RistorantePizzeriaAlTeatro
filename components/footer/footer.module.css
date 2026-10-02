@@ -39,6 +39,26 @@
     text-align: center;
 }
 
+.contactAddress {
+    color: #333;
+    font-family: var(--ff-body);
+    font-style: normal;
+    margin: 0.5rem 0;
+}
+
+.directionsLink {
+    display: inline-block;
+    color: #333;
+    padding: 0.5rem 0;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.directionsLink:focus-visible {
+    outline: 3px solid black;
+    outline-offset: 4px;
+}
+
 .legal {
     display: flex;
     justify-content: space-between;

@@ -1,3 +1,5 @@
+// @ts-check
+
 import Hero from "@/components/hero/hero";
 
 import styles from "./page.module.css";
@@ -7,9 +9,12 @@ import IntroMenu from "@/components/intro-menu/intro-menu";
 import Place from "@/components/place/place";
 import Booking from "@/components/booking/booking";
 
+/** @type {import("next").Metadata} */
 export const metadata = {
-  canonicals: "https://www.ristorante-alteatro.it",
-}
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (

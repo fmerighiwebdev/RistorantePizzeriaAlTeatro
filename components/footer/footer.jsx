@@ -7,6 +7,7 @@ import instagramIcon from "@/assets/instagram.svg";
 import facebookIcon from "@/assets/facebook.svg";
 
 import Link from "next/link";
+import { restaurantContact } from "@/lib/restaurant";
 
 export default function Footer() {
   return (
@@ -24,11 +25,20 @@ export default function Footer() {
             <div className={styles.centeredContact}>
               <div className={styles.contact}>
                 <p>Telefono:</p>
-                <a href="tel:0304196425" className={styles.footerLink}>
-                  +39 030 4196425
+                <a href={restaurantContact.phoneHref} className={styles.footerLink}>
+                  {restaurantContact.phone}
                 </a>
-                <a href="tel:+393519560584" className={styles.footerLink}>
-                  +39 351 9560584
+                <a href="tel:+393888705312" className={styles.footerLink}>
+                  +39 388 8705312
+                </a>
+              </div>
+              <div className={styles.contact}>
+                <p>Indirizzo:</p>
+                <address className={styles.contactAddress}>
+                  {restaurantContact.address}
+                </address>
+                <a href={restaurantContact.directionsHref} className={styles.directionsLink}>
+                  Indicazioni stradali su Google Maps
                 </a>
               </div>
               <div className={styles.contact}>
